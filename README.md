@@ -1,4 +1,4 @@
-# 🤖 ChatBot de Riscos de Segurança – Segunda Linha de Defesa
+# 🤖 ChatBot de Riscos de Segurança e Tecnologia – Segunda Linha de Defesa
 
 Este projeto implementa um **ChatBot em linguagem natural** para apoiar a **segunda linha de defesa** em segurança cibernética.  
 Ele utiliza **RAG (Retrieval-Augmented Generation)** e o modelo **Mistral** rodando via **Ollama + Docker** para consultar e responder perguntas sobre riscos armazenados em um **JSON estruturado**.
