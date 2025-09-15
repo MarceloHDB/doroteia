@@ -11,7 +11,7 @@ Ele utiliza **RAG (Retrieval-Augmented Generation)** e o modelo **Mistral** roda
 - **Flask** → servidor web que expõe o frontend e recebe as perguntas.  
 - **RAG (rag_utils.py)** → conecta a pergunta do usuário à base `dados.json`.  
 - **Frontend (templates + static)** → interface simples em HTML/CSS/JS.  
-
+- ***Nota** → Necessário 24 GB de memória Ram e um Processador I7 ou equivalente. Mistral e Ollama roda local.
 Fluxo:
 ```
 Usuário → Frontend → Flask (app.py) → RAG (rag_utils.py) → Ollama/Mistral → Resposta
@@ -48,8 +48,8 @@ O Ollama ficará disponível em `http://localhost:11434`.
 
 ### 2. Clonar o projeto
 ```bash
-git clone https://github.com/SEU-USUARIO/chatbot-riscos-seguranca.git
-cd chatbot-riscos-seguranca
+git clone https://github.com/MarceloHDB/doroteia.git
+cd doroteia
 ```
 
 ---
