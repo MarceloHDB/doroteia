@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <title>Dorote.IA - Consultora de Riscos</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9fb;
+            font-family: Arial, sans-serif;
+            overflow-y: auto;
+        }
+
+        body {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .header-image-container {
+            position: relative;
+            width: 100%;
+            height: 150px; /* altura baixa e discreta */
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .header-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.2; /* imagem suave e sem destaque */
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 0;
+            font-size: 1.6em;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;     /* bordas arredondadas */
+            border: 1px solid #ccc; /* borda suave */
+            box-sizing: border-box; /* para considerar padding dentro da largura */
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3399ff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1a7cd6;
+        }
+
+        .chat-bubble {
+            background-color: #e6f0ff;
+            border-left: 5px solid #3399ff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            overflow-x: auto;
+        }
+
+        pre {
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 6px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Imagem discreta ocupando toda a largura antes do título -->
+    <div class="header-image-container">
+        <img src="{{ url_for('static', filename='img/doroteia.png') }}" alt="Dorote.IA" />
+    </div>
+
+    <h2>🔎 Dorote.IA - Consultora de Riscos</h2>
+
+    <form method="POST">
+        <label for="pergunta">Faça sua pergunta:</label><br />
+        <input type="text" id="pergunta" name="pergunta" value="{{ pergunta }}" /><br /><br />
+        <button type="submit">Perguntar</button>
+    </form>
+
+{% if contexto %}
+    <h3>📄 Contexto Encontrado:</h3>
+    <pre>
+{% for item in contexto %}
+{{ item }}
+
+{% endfor %}
+    </pre>
+{% endif %}
+
+    {% if resposta %}
+        <h3>💬 Resposta ...:</h3>
+        <div class="chat-bubble">{{ resposta }}</div>
+    {% endif %}
+
+</body>
+</html>
+
